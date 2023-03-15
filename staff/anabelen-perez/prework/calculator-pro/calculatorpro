@@ -1,0 +1,84 @@
+let receivedNumber1;
+let receivedNumber2;
+
+let result;
+
+let SquareRoot = false;
+
+
+const askNumber1 = () => {
+  receivedNumber1 = +prompt("Por favor, introduce el primer número");
+
+  if (Number.isNaN(receivedNumber1)) {
+    alert("El valor introducido no es un número, inténtalo de nuevo");
+    return askNumber1();
+  }
+}
+
+
+const askNumber2 = () => {
+  receivedNumber2 = +prompt("Por favor, introduce el segundo número");
+
+  if (Number.isNaN(receivedNumber2)) {
+    alert("El valor introducido no es un número, inténtalo de nuevo");
+    return askNumber2();
+  }
+}
+
+const noNumbers = () => {
+	
+  if (!receivedNumber1) {
+    SquareRoot = true;
+    let resultSqr1 = Math.sqrt(receivedNumber2);
+    alert(`La raíz cuadrada es ${resultSqr1}`);
+	
+    
+  }
+  if (!receivedNumber2) {
+    SquareRoot = true;
+    let resultSqr2 = Math.sqrt(receivedNumber1);
+    alert(`La raíz cuadrada es ${resultSqr2}`);
+
+  }
+}
+
+const calculateAll = () => {
+  let resultSum = receivedNumber1 + receivedNumber2;
+  let resultSubtract = receivedNumber1 - receivedNumber2;
+  let resultMultiply = receivedNumber1 * receivedNumber2;
+  let resultDivide = receivedNumber1 / receivedNumber2;
+
+  if (SquareRoot === false) {
+    alert(`El resultado de sumar ${receivedNumber1} y ${receivedNumber2} es ${resultSum}`);
+    alert(`El resultado de restar ${receivedNumber1} y ${receivedNumber2} es ${resultSubtract}`);
+    alert(`El resultado de multiplicar ${receivedNumber1} y ${receivedNumber2} es ${resultMultiply}`);
+    alert(`El resultado de dividir ${receivedNumber1} y ${receivedNumber2} es ${resultDivide.toFixed(3)}`);
+  if (SquareRoot === true) {
+	noNumbers();
+}
+  }
+}
+
+const resetOperations = () => {
+  let answerReset = prompt("¿Quieres seguir calculando? si/no");
+  if (answerReset === "si") {
+    SquareRoot = false;
+    return calculator();
+  } else if (answerReset === "no") {
+    alert("¡Gracias! ¡Hasta otra!");
+    calculatorOn = false;
+  } else {
+    alert("Introduce si o no, ¡gracias!");
+    return resetOperations();
+  }
+}
+
+const calculator = () => {
+    askNumber1();
+    askNumber2();
+    noNumbers();
+    calculateAll();
+    resetOperations();
+}
+
+calculator();

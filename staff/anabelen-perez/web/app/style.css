@@ -12,8 +12,8 @@ body {
 /* styles */
 
 :root {
-    --basecolor: rgb(110, 226, 106);
-    --basebgcolor: rgb(108, 94, 110);
+    --basecolor: rgb(201, 221, 200);
+    --basebgcolor: rgb(158, 133, 161);
 }
 
 .off {
@@ -48,6 +48,13 @@ body {
 
 .button {
     cursor: pointer;
+    background: #EECDA3;
+  background-image: -webkit-linear-gradient(top, #EECDA3, #EF629F);
+  background-image: -moz-linear-gradient(top, #EECDA3, #EF629F);
+  background-image: -ms-linear-gradient(top, #EECDA3, #EF629F);
+  background-image: -o-linear-gradient(top, #EECDA3, #EF629F);
+  background-image: linear-gradient(to bottom, #EECDA3, #EF629F);
+    
 }
 
 .button--accept {
@@ -60,7 +67,7 @@ body {
 
 @media (min-width: 768px) {
     .page {
-        background-color: tomato;
+        background-color: rgb(102, 82, 100);
     }
 }
 
